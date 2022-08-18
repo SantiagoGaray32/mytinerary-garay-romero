@@ -1,0 +1,9 @@
+.footer-container{
+    background-color: black;
+    color: whitesmoke;
+    font-size: 15px;
+    min-height: 15vh;
+    margin: 0;
+    padding: 0;
+}
+p{margin: 0;}
