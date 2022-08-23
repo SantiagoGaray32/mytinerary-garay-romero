@@ -4,6 +4,7 @@ import facebookImage from "../../img/facebook.png";
 import instagramImage from "../../img/instagram.png";
 import whatsAppImage from "../../img/whatsapp.png";
 import twitterImage from "../../img/twitter.png";
+import arrow from "../../img/flechaSbg1.png"
 import Icono from "./Icono";
 export default function Footer() {
   return (
@@ -29,6 +30,11 @@ export default function Footer() {
             <Icono name={instagramImage} alt="Instagram"></Icono>
             <Icono name={whatsAppImage} alt="Whatsapp"></Icono>
             <Icono name={twitterImage} alt="Twitter"></Icono>
+          </div>
+        </div>
+        <div className="box arrow">
+          <div >
+            <Icono name={arrow} alt="Facebook"></Icono>
           </div>
         </div>
       </div>
