@@ -6,6 +6,7 @@ import whatsAppImage from "../../img/whatsapp.png";
 import twitterImage from "../../img/twitter.png";
 import arrow from "../../img/flechaSbg1.png"
 import Icono from "./Icono";
+
 export default function Footer() {
   return (
     <footer id="footer">
