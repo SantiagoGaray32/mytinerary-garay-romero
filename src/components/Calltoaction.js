@@ -4,7 +4,7 @@ import "../style/calltoaction.css";
 export default function Calltoaction() {
   return (
     <div className="Callto-image">
-      <a href="#footer">LINK A CITIES</a>
+      <a className="callToAction" href="#footer">Enter</a>
       <img src=""></img>
     </div>
   );
