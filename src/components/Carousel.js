@@ -18,10 +18,12 @@ function Carousel() {
   const renderImg = (listCitys) => {
     console.log(listCitys);
     return listCitys.map((city) => (
-      <>
-        <p>{city.title}</p>
-        <img src={city.url} />
-      </>
+      <div className="slide">
+              <div className="item">
+                <h4 className="citiesTitle">{city.title}</h4>
+                <img className="carouselImage" src={city.url} />
+              </div>
+      </div>
     ));
   };
   const foward = () => {
@@ -51,7 +53,7 @@ function Carousel() {
       { url: punta_cana, title: "Punta Cana" },
     ]),
     slide2: renderImg([
-      { url: roma, title: "Roma" },
+      { url: roma, title: "Rome" },
       { url: sidney, title: "Sidney" },
       { url: tokyo, title: "Tokyo" },
       { url: ibiza, title: "Ibiza" },
@@ -60,13 +62,28 @@ function Carousel() {
 
   return (
     <div>
-      <button onClick={foward}>{"<"}</button>
-      {sectionCarrousel === 0
-        ? listSlides.slide0
-        : sectionCarrousel === 1
-        ? listSlides.slide1
-        : listSlides.slide2}
-      <button onClick={back}>{">"}</button>
+        
+        <div className="carouselTitle">
+        <h2>Popular MYtineraries</h2>
+        </div>
+      
+        <div className="carousel-content">
+            <div className="buttonFoward">
+                  <button className="buttonSlide" onClick={foward}>{"<-"}</button>
+            </div>
+            <div className="slideContents">
+
+            {sectionCarrousel === 0
+              ? listSlides.slide0
+              : sectionCarrousel === 1
+              ? listSlides.slide1
+              : listSlides.slide2}
+              </div>
+
+              <div className="buttonBack">
+                    <button className="buttonSlide" onClick={back}>{"->"}</button>
+              </div>
+        </div>
     </div>
   );
 }
