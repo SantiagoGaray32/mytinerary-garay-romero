@@ -1,5 +1,5 @@
 function Cities() {
-  return <div>UNDER CONSTRUCTION</div>;
+  return <div>Cities</div>;
 }
 
 export default Cities;
