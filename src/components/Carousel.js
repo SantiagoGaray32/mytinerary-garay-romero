@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import paris from "../img/paris.jpg";
 import amsterdam from "../img/amsterdam.jpg";
 import dubai from "../img/dubai.jpg";
@@ -15,28 +15,42 @@ import "../style/carrousel.css";
 
 function Carousel() {
   const [sectionCarrousel, setSectionCarrousel] = useState(1);
+
+  useEffect(() => {
+    let loop = setInterval(() => {
+      foward();
+    }, 8000);
+
+    return () => {
+      clearInterval(loop);
+    };
+  }, [sectionCarrousel]);
+
   const renderImg = (listCitys) => {
-    console.log(listCitys);
     return listCitys.map((city) => (
-      <div className="slide">
-              <div className="item">
-                <h4 className="citiesTitle">{city.title}</h4>
-                <img className="carouselImage" src={city.url} />
-              </div>
+      <div className="slide" key={city.url}>
+        <div className="item">
+          <h4 className="citiesTitle">{city.title}</h4>
+          <img className="carouselImage" src={city.url} />
+        </div>
       </div>
     ));
   };
+
   const foward = () => {
-    if (sectionCarrousel !== 2) {
-      setSectionCarrousel(sectionCarrousel + 1);
-      console.log(sectionCarrousel);
-    }
+    //if (sectionCarrousel !== 2) {
+    //console.log("section forward", sectionCarrousel);
+    setSectionCarrousel(sectionCarrousel >= 2 ? 0 : sectionCarrousel + 1);
+    //console.log(sectionCarrousel);
+    //}
   };
+
   const back = () => {
-    if (sectionCarrousel !== 0) {
-      setSectionCarrousel(sectionCarrousel - 1);
-      console.log(sectionCarrousel);
-    }
+    //if (sectionCarrousel !== 0) {
+    //console.log("section back", sectionCarrousel);
+    setSectionCarrousel(sectionCarrousel <= 0 ? 2 : sectionCarrousel - 1);
+    //console.log(sectionCarrousel);
+    //}
   };
 
   const listSlides = {
@@ -62,28 +76,30 @@ function Carousel() {
 
   return (
     <div>
-        
-        <div className="carouselTitle">
+      <div className="carouselTitle">
         <h2>Popular MYtineraries</h2>
-        </div>
-      
-        <div className="carousel-content">
-            <div className="buttonFoward">
-                  <button className="buttonSlide" onClick={foward}>{"<-"}</button>
-            </div>
-            <div className="slideContents">
+      </div>
 
-            {sectionCarrousel === 0
-              ? listSlides.slide0
-              : sectionCarrousel === 1
-              ? listSlides.slide1
-              : listSlides.slide2}
-              </div>
-
-              <div className="buttonBack">
-                    <button className="buttonSlide" onClick={back}>{"->"}</button>
-              </div>
+      <div className="carousel-content">
+        <div className="buttonFoward">
+          <button className="buttonSlide" onClick={back}>
+            {"<-"}
+          </button>
         </div>
+        <div className="slideContents">
+          {sectionCarrousel === 0
+            ? listSlides.slide0
+            : sectionCarrousel === 1
+            ? listSlides.slide1
+            : listSlides.slide2}
+        </div>
+
+        <div className="buttonBack">
+          <button className="buttonSlide" onClick={foward}>
+            {"->"}
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
