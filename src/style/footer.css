@@ -2,11 +2,6 @@ footer {
   width: 100%;
   background-color: #25142d;
   color: white;
-  /* display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        background-color: grey;
-        color: whitesmoke; */
 }
 .group1 {
   width: 100%;
@@ -44,10 +39,10 @@ footer .group2 {
   padding: 15px 10px;
   background-color: #7c7281;
 }
-.arrow{
+.arrow {
   padding: 23px;
 }
-#footerArrow{
+#footerArrow {
   padding: 23px;
 }
 
