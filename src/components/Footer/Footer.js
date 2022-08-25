@@ -4,9 +4,8 @@ import facebookImage from "../../img/facebook.png";
 import instagramImage from "../../img/instagram.png";
 import whatsAppImage from "../../img/whatsapp.png";
 import twitterImage from "../../img/twitter.png";
-
 import arrow from "../../img/flechaSbg1.png";
-import Icon from "./Icono";
+import Icon from "./Icon";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
@@ -23,7 +22,6 @@ export default function Footer() {
           <div className="foterNav-Nav">
             <Link to={"/NewCity"}>NewCity</Link>
           </div>
-
         </div>
         <div className="box">
           <h3>MyTinerary</h3>
