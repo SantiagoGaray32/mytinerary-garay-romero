@@ -1,4 +1,4 @@
-export default function Icono(props) {
+export default function Icon(props) {
   return (
     <div>
       <a href="#">
