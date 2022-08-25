@@ -6,16 +6,23 @@ import whatsAppImage from "../../img/whatsapp.png";
 import twitterImage from "../../img/twitter.png";
 import arrow from "../../img/flechaSbg1.png"
 import Icono from "./Icono";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
     <footer id="footer">
       <div className="group1">
-        <div className="box">
-          <p>Home</p>
-          <p>Cities</p>
-          <p>Log In</p>
-          <p>Sign Up</p>
+        <div className="box" id="footerNav">
+          <div className="foterNav-Nav">
+            <Link to={"/"}>Home</Link>
+          </div>
+          <div className="foterNav-Nav">
+            <Link to={"/cities"}>Cities</Link>
+          </div>
+          <div className="foterNav-Nav">
+            <Link to={"/NewCity"}>NewCity</Link>
+          </div>
+
         </div>
         <div className="box">
           <h3>MyTinerary</h3>

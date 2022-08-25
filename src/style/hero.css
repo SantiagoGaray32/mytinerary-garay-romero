@@ -6,3 +6,18 @@
   width: 85%;
   margin: auto;
 }
+.heroContent{
+  background-image: url(../img/background2.jpg);
+  min-height: 90vh;
+  display: flex;
+  /* justify-content: center; */
+  align-items: flex-end;
+  background-size: cover;
+  font-size: xx-large;
+  font-style: italic;
+  background-position: 50%;
+  color: white;
+}
+.heroText{
+    background-color: rgba(0, 0, 0, 0.280);
+}

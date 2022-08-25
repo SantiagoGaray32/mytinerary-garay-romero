@@ -2,6 +2,9 @@ import React from "react";
 import "../style/navbar.css";
 import User from "../img/user.png";
 import logoMenu from "../img/menu.png";
+import { Link } from "react-router-dom";
+import UnderConstruction from "../pages/UnderConstruction";
+import logoApp from "../img/logoMyT.jpg"
 
 function Navbar() {
   return (
@@ -12,19 +15,22 @@ function Navbar() {
       </label>
       <div className="menu">
         <ul>
-          <li>
-            <a href="">Cities</a>
+          <li id="logoMyT">
+            <p><img className="logoApp"  src={logoApp}></img></p>
           </li>
           <li>
-            <a href="">New City</a>
+            <Link to={"/"}>Home</Link>
           </li>
           <li>
-            <a href="">Under Construction</a>
+            <Link to={"/Cities"}>Cities</Link>
           </li>
           <li>
-            <a>
+            <Link to={"/NewCity"}>New City</Link>
+          </li>
+          <li>
+            <p>
               <img className="logoUser" src={User}></img>
-            </a>
+            </p>
           </li>
         </ul>
       </div>
