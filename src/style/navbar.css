@@ -2,9 +2,18 @@
   margin: 0;
 }
 
+a :active{
+  font-weight: bold;
+}
+
+a{
+  font-style: italic;
+  font-size: 20px;
+}
+
 .navContainer {
   width: 100%;
-  background-color: black;
+  background-color: #7c7281;
   min-height: 10vh;
 }
 #btn-menu {
@@ -42,7 +51,7 @@
   }
   .menu {
     position: absolute;
-    background-color: rgb(0, 0, 0);
+    background-color:#7c7281;
     width: 70%;
     margin-left: -70%;
     transition: all 0.5s;
@@ -58,6 +67,9 @@
     margin: 0;
     z-index: 1;
   }
+  #logoMyT{
+    display: none;
+  }
 }
 .logoUser {
   width: 30px;
@@ -66,4 +78,8 @@
 .logoMenu {
   width: 30px;
   height: 30px;
+}
+.logoApp{
+  width: 60px;
+  border-radius: 10px;
 }

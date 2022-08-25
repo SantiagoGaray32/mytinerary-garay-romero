@@ -8,12 +8,12 @@ import fondo from "../img/background2.jpg";
 export default function Hero() {
   return (
     <div className="Hero-image">
-      {/* <h1 className="Hero-title">MyTinerary</h1> */}
-      <img className="Hero-img" src={fondo}></img>
-      <h2>
-        Find your perfect trip, designed by insiders who know and love their
-        cities!
-      </h2>
+      <div className="heroContent">
+        <h3 className="heroText">
+          Find your perfect trip, designed by insiders who know and love their
+          cities!
+        </h3>
+      </div>
     </div>
   );
 }

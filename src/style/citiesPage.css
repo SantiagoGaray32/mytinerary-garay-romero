@@ -1,0 +1,18 @@
+.citiesContainer{
+    background-image: url(../img/rome-background.jpg);
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    font-size: xx-large;
+    font-style: italic;
+    background-position: 50%;
+    color: white;
+}
+
+.CitiesText{
+    width: 80%;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.562);
+}
