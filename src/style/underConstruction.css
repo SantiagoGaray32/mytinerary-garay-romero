@@ -1,0 +1,18 @@
+.underContainer{
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/paris-background.jpg);
+    background-size: cover;
+    font-size: xx-large;
+    font-style: italic;
+    background-position: 50%;
+    color: white;
+}
+
+.underConstructionText{
+    width: 80%;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.562);
+}
