@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import UnderConstruction from "./pages/UnderConstruction";
 import Cities from "./components/Cities";
 import NewCity from "./components/NewCities";
+import CityCard from "./components/CityCard";
 
 function App() {
   return (
