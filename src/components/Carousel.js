@@ -19,7 +19,7 @@ function Carousel() {
   useEffect(() => {
     let loop = setInterval(() => {
       foward();
-    }, 8000);
+    }, 4000);
 
     return () => {
       clearInterval(loop);
@@ -38,19 +38,11 @@ function Carousel() {
   };
 
   const foward = () => {
-    //if (sectionCarrousel !== 2) {
-    //console.log("section forward", sectionCarrousel);
     setSectionCarrousel(sectionCarrousel >= 2 ? 0 : sectionCarrousel + 1);
-    //console.log(sectionCarrousel);
-    //}
   };
 
   const back = () => {
-    //if (sectionCarrousel !== 0) {
-    //console.log("section back", sectionCarrousel);
     setSectionCarrousel(sectionCarrousel <= 0 ? 2 : sectionCarrousel - 1);
-    //console.log(sectionCarrousel);
-    //}
   };
 
   const listSlides = {

@@ -80,6 +80,7 @@
     width: 85%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .buttonSlide{
@@ -112,10 +113,10 @@
     background: #793e976b;
     }
 }
-@media screen and (max-width:1014px) {
+@media screen and (max-width:1044px) {
     .slideContents{
         margin: auto;
-        /* width: 70%; */
+        width: 70%;
     }
     .item{
         border: solid 2px orange;

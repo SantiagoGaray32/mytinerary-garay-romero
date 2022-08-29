@@ -2,11 +2,6 @@ footer {
   width: 100%;
   background-color: #25142d;
   color: white;
-  /* display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        background-color: grey;
-        color: whitesmoke; */
 }
 .group1 {
   width: 100%;
@@ -34,7 +29,7 @@ footer .group1 .social a {
   width: 45px;
   height: 45px;
   line-height: 45px;
-  margin-right: 10px;
+  /* margin-right: 10px; */
   text-align: center;
 }
 .footerIcon {
@@ -44,10 +39,10 @@ footer .group2 {
   padding: 15px 10px;
   background-color: #7c7281;
 }
-.arrow{
+.arrow {
   padding: 23px;
 }
-#footerArrow{
+#footerArrow {
   padding: 23px;
 }
 
@@ -58,4 +53,14 @@ footer .group2 {
     grid-gap: 30px;
     padding: 35px 0px;
   }
+}
+
+#footerNav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.foterNav-Nav{
+  margin-bottom: 15px;
 }
