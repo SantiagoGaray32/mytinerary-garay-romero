@@ -1,5 +1,5 @@
 import React from "react"
-import "../style/cityCard.css"
+import "../styles/CityCard.css"
 import paris from "../img/paris.jpg";
 import amsterdam from "../img/amsterdam.jpg";
 import dubai from "../img/dubai.jpg";
@@ -12,7 +12,7 @@ import roma from "../img/roma.jpg";
 import sidney from "../img/sidney.jpg";
 import tokyo from "../img/tokyo.jpg";
 import ibiza from "../img/ibiza.jpg";
-import "../style/carrousel.css";
+import "../styles/Carrousel.css";
 
 const renderCard = (item) => {
     return item.map((city) =>(

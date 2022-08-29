@@ -116,7 +116,7 @@
 @media screen and (max-width:1044px) {
     .slideContents{
         margin: auto;
-        width: 70%;
+        /* width: 70%; */
     }
     .item{
         border: solid 2px orange;
