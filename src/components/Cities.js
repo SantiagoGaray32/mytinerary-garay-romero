@@ -1,18 +1,17 @@
 // import React from "react";
 import WebsiteLayout from "../layout/WebsiteLayout";
 import "../style/citiesPage.css"
+import CityCard from "./CityCard";
 
-function Cities() {
-
+function Cities({ children }) {
+   
   return(
     <WebsiteLayout>
-
-    <div className="citiesContainer">
-       <div className="CitiesText">
-          <h4 className="underTitle">We show you our cities.</h4>
-       </div>
-    </div>
-
+                  <div className="citiesContainer">  
+                        <div className="background-cities">
+                              <CityCard /> 
+                        </div>
+                  </div>
     </WebsiteLayout>
     
     )
