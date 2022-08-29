@@ -1,0 +1,30 @@
+.citiesContainer{
+    /* background-image: url(http://localhost:3000/static/media/Amsterdam-Background.e527028….jpg); */
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    font-size: xx-large;
+    font-style: italic;
+    background-position: 50%;
+}
+.background-cities{
+    background-color: #775d85;
+    color: white;
+}
+
+.CitiesText{
+    width: 80%;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.562);
+}
+
+@media screen and (min-width:559px) {
+    
+    .background-cities{
+        background-image: url(../img/rome-background2.jpg);
+        background-position: 50%;
+        background-size: cover;
+    }
+}

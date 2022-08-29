@@ -11,7 +11,7 @@ import roma from "../img/roma.jpg";
 import sidney from "../img/sidney.jpg";
 import tokyo from "../img/tokyo.jpg";
 import ibiza from "../img/ibiza.jpg";
-import "../style/carrousel.css";
+import "../styles/Carrousel.css";
 
 function Carousel() {
   const [sectionCarrousel, setSectionCarrousel] = useState(1);
@@ -75,7 +75,7 @@ function Carousel() {
       <div className="carousel-content">
         <div className="buttonFoward">
           <button className="buttonSlide" onClick={back}>
-            {"<-"}
+            {"<"}
           </button>
         </div>
         <div className="slideContents">
@@ -88,7 +88,7 @@ function Carousel() {
 
         <div className="buttonBack">
           <button className="buttonSlide" onClick={foward}>
-            {"->"}
+            {">"}
           </button>
         </div>
       </div>
