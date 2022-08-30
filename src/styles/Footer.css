@@ -46,7 +46,7 @@ footer .group2 {
   padding: 23px;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 495px) {
   .group1 {
     width: 90%;
     grid-template-columns: repeat(1, 1fr);

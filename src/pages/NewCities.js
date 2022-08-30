@@ -1,12 +1,13 @@
 import React from "react";
 import "../styles/NewCity.css"
+import Form from "../components/Input";
 
-function NewCity (){
+function NewCity ({ children }){
     return(
        
             <div className="newCityContainer">
-                <div className="newCityText">
-                    <h4>Soon you will be able to add your next destination</h4>
+                <div className="form">
+                    <Form />
                 </div>
             </div>
         

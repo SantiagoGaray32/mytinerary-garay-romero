@@ -1,50 +1,48 @@
 import React from "react"
 import "../styles/Input.css"
 
-const renderInput = (Input) => {
-    return Input.map((categories) =>(
-        <div className="form" key={Input.url}>
-            <form>
-            <div>
-                <label for="city">City
-                    <input id="city" src={categories.city}></input>
-                </label>
-            </div> 
-            <div>
-                <label for="country">Country
-                    <input id="country" src={categories.country}></input>
-                </label>
-            </div>
-            <div>
-                <input src={categories.photo}></input>
-            </div>
-            <div>
-                <input src={categories.population}></input>
-            </div>
-            <button type="submit" >Submit</button>
-            </form>
+function Form (){
+    const cityRef = React.useRef()
+    const countryRef = React.useRef()
+    const photoRef = React.useRef()
+    const populationRef = React.useRef()
+    const foundationRef = React.useRef()
 
-        </div>
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(cityRef.current.value);
+        console.log(countryRef.current.value);
+        console.log(photoRef.current.value);
+        console.log(populationRef.current.value);
+        console.log(foundationRef.current.value);
 
-    ))
-   } 
-  const inputCategories = {
-        allCategories: renderInput([
-            {city:"",
-             country:"",
-             photo:"",
-             population:"",}
-        ])
-
-  }   
-function Forms (){
+    }
+    
     return(
-        <div className="formContainer">
-            {inputCategories.allCategories}
+    <div>
+        <form onSubmit={handleSubmit}>
+            <label for="city">City:</label>
+            <input type="text" id="city" ref={cityRef}></input>
+            <br />
+            <label for="country">Country:</label>
+            <input type="text" id="country" ref={countryRef} ></input>
+            <br />
+            <label for="photo">Photo Url:</label>
+            <input type="text" id="photo" ref={photoRef} ></input>
+            <br />
+            <label for="population">Population:</label>
+            <input type="number" id="population" ref={populationRef} ></input>
+            <br />
+            <label for="foundation">Foundation:</label>
+            <input type="number" id="foundation" ref={foundationRef} ></input>
+            <button type="submit">Submit</button>
 
 
-        </div>
+
+
+        </form>
+    </div>
 
     )
 }
-export default Forms
+export default Form;

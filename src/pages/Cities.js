@@ -4,13 +4,12 @@ import CityCard from "../components/CityCard";
 function Cities({ children }) {
    
   return(
-
                   <div className="citiesContainer">  
                         <div className="background-cities">
                               <CityCard /> 
                         </div>
                   </div>
-    
+
     
     )
     

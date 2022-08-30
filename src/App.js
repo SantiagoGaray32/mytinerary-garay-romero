@@ -14,7 +14,6 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <WebsiteLayout>
-        <Forms />
           <Routes>
             <Route path="/NewCity" element={<NewCity />} />
             <Route path="/" element={<Home />} />
