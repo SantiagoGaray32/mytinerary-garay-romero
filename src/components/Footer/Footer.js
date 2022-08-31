@@ -9,6 +9,13 @@ import Icon from "./Icon";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
+  const scrollUp = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <footer id="footer">
       <div className="group1">
@@ -29,6 +36,7 @@ export default function Footer() {
             Contact: <a>MyTinerary@gmail.com</a>
           </p>
           <p>Adress: florida 656- pb 1 - Buenos Aires</p>
+          <p>{new Date().getFullYear()}</p>
         </div>
         <div className="box">
           <div className="social">
@@ -40,13 +48,11 @@ export default function Footer() {
           </div>
         </div>
         <div className="box arrow">
-          <div>
-            <Icon name={arrow} alt="Facebook"></Icon>
-          </div>
+          <button onClick={scrollUp}>SCOLL TO TOP</button>
         </div>
       </div>
       <div className="group2">
-        <h6>MyTinerary © 2022 All rights Reserved</h6>
+        <h6>MyTinerary © All rights Reserved {new Date().getFullYear()}</h6>
       </div>
     </footer>
   );
