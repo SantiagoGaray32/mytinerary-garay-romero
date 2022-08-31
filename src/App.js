@@ -15,8 +15,14 @@ function App() {
       <BrowserRouter>
         <ScrollToTop>
           <WebsiteLayout>
+<<<<<<< HEAD
             <Routes>
               <Route path="/NewCity" element={<NewCity />} />
+=======
+            <Forms />
+            <Routes>
+              <Route path="/new-city" element={<NewCity />} />
+>>>>>>> a765893614bc6627b5ebec980ab76390459b899e
               <Route path="/" element={<Home />} />
               <Route path="/cities" element={<Cities />} />
               <Route path="/*" element={<UnderConstruction />} />
@@ -28,4 +34,8 @@ function App() {
   );
 }
 
+<<<<<<< HEAD
 export default App;
+=======
+export default App;
+>>>>>>> a765893614bc6627b5ebec980ab76390459b899e
