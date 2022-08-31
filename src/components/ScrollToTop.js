@@ -9,8 +9,6 @@ export default function ScrollToTop({ children }) {
   }, [pathname]);
 
   return <>{children}</>;
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> a765893614bc6627b5ebec980ab76390459b899e
+
