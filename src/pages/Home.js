@@ -5,11 +5,9 @@ import Carousel from "../components/Carousel";
 function Home() {
   return (
     <div>
-    
       <Hero />
       <Calltoaction />
       <Carousel />
-     
     </div>
   );
 }

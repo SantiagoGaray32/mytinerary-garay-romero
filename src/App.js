@@ -15,9 +15,8 @@ function App() {
       <BrowserRouter>
         <ScrollToTop>
           <WebsiteLayout>
-            <Forms />
             <Routes>
-              <Route path="/new-city" element={<NewCity />} />
+              <Route path="/NewCity" element={<NewCity />} />
               <Route path="/" element={<Home />} />
               <Route path="/cities" element={<Cities />} />
               <Route path="/*" element={<UnderConstruction />} />
