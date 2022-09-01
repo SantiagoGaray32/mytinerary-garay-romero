@@ -1,42 +1,94 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import "../styles/Input.css";
 
 function Form() {
-  const cityRef = React.useRef();
-  const countryRef = React.useRef();
-  const photoRef = React.useRef();
-  const populationRef = React.useRef();
-  const foundationRef = React.useRef();
+  const initialValor = {
+    City: "",
+    country: "",
+    photo: "",
+    population: 0,
+    foundation: 0,
+  };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(cityRef.current.value);
-    console.log(countryRef.current.value);
-    console.log(photoRef.current.value);
-    console.log(populationRef.current.value);
-    console.log(foundationRef.current.value);
+  const [city, setCity] = useState(initialValor);
+
+  const captureData = (e) => {
+    const { name, value } = e.target;
+    setCity({ ...city, [name]: value });
+  };
+
+  const saveData = async (e) => {
+    e.preventDefault();
+
+    const newCity = {
+      city: city.City,
+      country: city.country,
+      photo: city.photo,
+      population: city.population,
+      foundation: city.foundation,
+    };
+
+    const newCity2 = await axios.post("http://localhost:4000/cities/", newCity);
+
+    setCity({ ...initialValor });
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="city">City:</label>
-        <input type="text" id="city" ref={cityRef}></input>
-        <br />
-        <label htmlFor="country">Country:</label>
-        <input type="text" id="country" ref={countryRef}></input>
-        <br />
-        <label htmlFor="photo">Photo Url:</label>
-        <input type="text" id="photo" ref={photoRef}></input>
-        <br />
-        <label htmlFor="population">Population:</label>
-        <input type="number" id="population" ref={populationRef}></input>
-        <br />
-        <label htmlFor="foundation">Foundation:</label>
-        <input type="number" id="foundation" ref={foundationRef}></input>
-        <button type="submit">Submit</button>
-      </form>
+    <div className="NewCityContainer">
+      <div className="MainNewCity">
+        {/* <Input /> */}
+        <form onSubmit={saveData}>
+          <input
+            type="text"
+            className="InputNewCity"
+            placeholder="City"
+            required
+            name="city"
+            value={city.city}
+            onChange={captureData}
+          />
+          <input
+            type="text"
+            className="InputNewCity"
+            placeholder="Country"
+            required
+            name="country"
+            value={city.country}
+            onChange={captureData}
+          />
+          <input
+            type="text"
+            className="InputNewCity"
+            placeholder="Photo"
+            required
+            name="photo"
+            value={city.photo}
+            onChange={captureData}
+          />
+          <input
+            type="number"
+            className="InputNewCity"
+            placeholder="Population"
+            required
+            name="population"
+            value={city.population}
+            onChange={captureData}
+          />
+          <input
+            type="number"
+            className="InputNewCity"
+            placeholder="Foundation"
+            required
+            name="foundation"
+            value={city.foundation}
+            onChange={captureData}
+          />
+          <button className="ButtonInput">Submit</button>
+        </form>
+      </div>
     </div>
   );
 }
+
 export default Form;
