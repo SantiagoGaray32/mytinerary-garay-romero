@@ -1,9 +1,5 @@
 .citiesContainer{
-    /* background-image: url(http://localhost:3000/static/media/Amsterdam-Background.e527028….jpg); */
-    min-height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    min-height: 68vh;
     background-size: cover;
     font-size: xx-large;
     font-style: italic;
