@@ -36,7 +36,6 @@ export default function Footer() {
             Contact: <a>MyTinerary@gmail.com</a>
           </p>
           <p>Adress: florida 656- pb 1 - Buenos Aires</p>
-          <p>{new Date().getFullYear()}</p>
         </div>
         <div className="box">
           <div className="social">
@@ -48,7 +47,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="box arrow">
-          <button onClick={scrollUp}>SCOLL TO TOP</button>
+          <Link to={scrollUp} onClick={scrollUp}><img className="arrow" src={arrow}></img></Link>
         </div>
       </div>
       <div className="group2">

@@ -8,6 +8,7 @@ import NewCity from "./pages/NewCities";
 import CityCard from "./components/CityCard";
 import Forms from "./components/Input.js";
 import ScrollToTop from "./components/ScrollToTop";
+import Details from "./pages/DetailsPage";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/cities" element={<Cities />} />
               <Route path="/*" element={<UnderConstruction />} />
+              <Route path="/details" element={<Details />} />
             </Routes>
           </WebsiteLayout>
         </ScrollToTop>
