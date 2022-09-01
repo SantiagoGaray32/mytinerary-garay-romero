@@ -61,16 +61,16 @@ function Cities() {
               onChange={handleChange}
             />
 
-            <button>Buscar</button>
+            <button id="buttonSearch">Search</button>
           </form>
         </div>
 
         <div className="CardContainer">
           <h2>Look for your next adventure</h2>
-        </div>
         {cities.map((c) => (
           <CityCard photo={c.photo} city={c.city} />
-        ))}
+          ))}
+          </div>
       </div>
     </div>
   );

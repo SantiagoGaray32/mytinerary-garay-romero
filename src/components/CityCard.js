@@ -13,6 +13,7 @@ import sidney from "../img/sidney.jpg";
 import tokyo from "../img/tokyo.jpg";
 import ibiza from "../img/ibiza.jpg";
 import "../styles/Carrousel.css";
+import { Link } from "react-router-dom";
 
 // const renderCard = (item) => {
 //   return item.map((city) => (
@@ -47,6 +48,9 @@ function CityCard(props) {
       <img className="cardImg" src={props.photo}></img>
       <div className="cardBody">
         <h5>{props.city}</h5>
+        <div className="cityCardButton">
+          <Link className="cardButton" to={'/details'}>More</Link>
+        </div>
       </div>
     </div>
   );
