@@ -40,11 +40,9 @@ footer .group2 {
   background-color: #7c7281;
 }
 .arrow {
-  padding: 23px;
+  height: 35px;
 }
-#footerArrow {
-  padding: 23px;
-}
+
 
 @media screen and (max-width: 495px) {
   .group1 {
