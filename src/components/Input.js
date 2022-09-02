@@ -34,11 +34,8 @@ function Form() {
     setCity({ ...initialValor });
   };
 
-  return (
-    <div className="NewCityContainer">
-      <div className="MainNewCity">
-        {/* <Input /> */}
-        <form onSubmit={saveData}>
+  return (  
+        <form id="formNewCity" onSubmit={saveData}>
           <input
             type="text"
             className="InputNewCity"
@@ -86,8 +83,7 @@ function Form() {
           />
           <button className="ButtonInput">Submit</button>
         </form>
-      </div>
-    </div>
+      
   );
 }
 

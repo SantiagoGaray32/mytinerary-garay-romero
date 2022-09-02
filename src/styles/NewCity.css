@@ -16,7 +16,7 @@
     margin: auto;
     background-color: rgba(0, 0, 0, 0.562);
 }
-.form{
+.formContainerNewCity{
     width: 320px;
     margin: auto;
     display: grid;
