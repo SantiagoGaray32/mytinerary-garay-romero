@@ -44,15 +44,8 @@ function Cities() {
       <div className="background-cities">
         <div className="search-container">
           <form onSubmit={handleSubmit}>
-            <select
-              name="type"
-              value={type}
-              onChange={handleChange}
-              defaultValue="city"
-            >
-              <option value="city">City</option>
-              <option value="country">Country</option>
-            </select>
+           
+            <p>Search city: </p>
 
             <input
               type="text"

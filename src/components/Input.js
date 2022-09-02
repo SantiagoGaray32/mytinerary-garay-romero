@@ -4,7 +4,7 @@ import "../styles/Input.css";
 
 function Form() {
   const initialValor = {
-    City: "",
+    city: "",
     country: "",
     photo: "",
     population: 0,
@@ -22,23 +22,20 @@ function Form() {
     e.preventDefault();
 
     const newCity = {
-      city: city.City,
+      city: city.city,
       country: city.country,
       photo: city.photo,
       population: city.population,
       foundation: city.foundation,
     };
-
-    const newCity2 = await axios.post("http://localhost:4000/cities/", newCity);
+      console.log(newCity);
+      await axios.post("http://localhost:4000/cities/", newCity);
 
     setCity({ ...initialValor });
   };
 
-  return (
-    <div className="NewCityContainer">
-      <div className="MainNewCity">
-        {/* <Input /> */}
-        <form onSubmit={saveData}>
+  return (  
+        <form id="formNewCity" onSubmit={saveData}>
           <input
             type="text"
             className="InputNewCity"
@@ -86,8 +83,7 @@ function Form() {
           />
           <button className="ButtonInput">Submit</button>
         </form>
-      </div>
-    </div>
+      
   );
 }
 
