@@ -12,26 +12,47 @@ import sidney from "../img/sidney.jpg";
 import tokyo from "../img/tokyo.jpg";
 import ibiza from "../img/ibiza.jpg";
 import "../styles/Carrousel.css";
+import axios from "axios";
 
-function Carousel() {
+const listSlides = {};
+
+function Carousel(props) {
   const [sectionCarrousel, setSectionCarrousel] = useState(1);
 
+  const [sectionSlide, setSectionSlide] = useState([]);
+
+
+  useEffect(() =>{
+    
+    splitResult(props.slides);
+  },[props.slides])
+ 
   useEffect(() => {
     let loop = setInterval(() => {
       foward();
     }, 4000);
-
+    
     return () => {
       clearInterval(loop);
     };
   }, [sectionCarrousel]);
 
+  const splitResult = result =>{
+    listSlides.slide0 = renderImg(result.slice(0,4));
+    listSlides.slide1 = renderImg(result.slice(4,8));
+    listSlides.slide2 = renderImg(result.slice(8,12));
+    console.log(listSlides);
+  }
+
+ 
+
+
   const renderImg = (listCitys) => {
     return listCitys.map((city) => (
-      <div className="slide" key={city.url}>
+      <div className="slide" key={city.photo}>
         <div className="item">
-          <h4 className="citiesTitle">{city.title}</h4>
-          <img className="carouselImage" src={city.url} />
+          <h4 className="citiesTitle">{city.city}</h4>
+          <img className="carouselImage" src={city.photo} />
         </div>
       </div>
     ));
@@ -45,26 +66,7 @@ function Carousel() {
     setSectionCarrousel(sectionCarrousel <= 0 ? 2 : sectionCarrousel - 1);
   };
 
-  const listSlides = {
-    slide0: renderImg([
-      { url: paris, title: "Paris" },
-      { url: amsterdam, title: "Amsterdam" },
-      { url: dubai, title: "Dubai" },
-      { url: hong_kong, title: "Hong Kong" },
-    ]),
-    slide1: renderImg([
-      { url: las_vegas, title: "Las Vegas" },
-      { url: london, title: "London" },
-      { url: montecarlo, title: "Montecarlo" },
-      { url: punta_cana, title: "Punta Cana" },
-    ]),
-    slide2: renderImg([
-      { url: roma, title: "Rome" },
-      { url: sidney, title: "Sidney" },
-      { url: tokyo, title: "Tokyo" },
-      { url: ibiza, title: "Ibiza" },
-    ]),
-  };
+ 
 
   return (
     <div>

@@ -10,7 +10,7 @@ function Navbar() {
   return (
     <div className="navContainer">
       <input type="checkbox" id="btn-menu"></input>
-      <label for="btn-menu">
+      <label htmlFor="btn-menu">
         <img className="logoMenu" src={logoMenu}></img>
       </label>
       <div className="menu">

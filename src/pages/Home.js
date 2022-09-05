@@ -1,13 +1,13 @@
 import Hero from "../components/Hero";
 import Calltoaction from "../components/Calltoaction";
-import Carousel from "../components/Carousel";
+import CarouselWrapper from "../components/CarouselWrapper";
 
 function Home() {
   return (
     <div>
       <Hero />
       <Calltoaction />
-      <Carousel />
+      <CarouselWrapper />
     </div>
   );
 }
