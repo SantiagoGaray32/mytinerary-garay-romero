@@ -2,7 +2,7 @@ import Input from "../components/Input";
 import "../styles/EditCity.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Option from "../componentes/Option";
+import Option from "../components/Option";
 
 function EditCity() {
   const [cities, setCities] = useState([]);

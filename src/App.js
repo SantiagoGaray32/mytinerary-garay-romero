@@ -9,6 +9,7 @@ import CityCard from "./components/CityCard";
 import Forms from "./components/Input.js";
 import ScrollToTop from "./components/ScrollToTop";
 import Details from "./pages/DetailsPage";
+import EditCity from "./pages/EditCity";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
               <Route path="/cities" element={<Cities />} />
               <Route path="/*" element={<UnderConstruction />} />
               <Route path="/details" element={<Details />} />
+              <Route path="/editCity" element={<EditCity />} />
             </Routes>
           </WebsiteLayout>
         </ScrollToTop>
