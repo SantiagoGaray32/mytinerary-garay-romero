@@ -29,6 +29,9 @@ export default function Footer() {
           <div className="foterNav-Nav">
             <Link to={"/NewCity"}>NewCity</Link>
           </div>
+          <div className="foterNav-Nav">
+            <Link to={"/editCity"}>Edit City</Link>
+          </div>
         </div>
         <div className="box">
           <h3>MyTinerary</h3>

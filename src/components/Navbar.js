@@ -28,6 +28,9 @@ function Navbar() {
             <Link to={"/NewCity"}>New City</Link>
           </li>
           <li>
+            <Link to={"/editCity"}>Edit City</Link>
+          </li>
+          <li>
             <p>
               <img className="logoUser" src={User}></img>
             </p>
