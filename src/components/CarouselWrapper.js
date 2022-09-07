@@ -1,24 +1,21 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useGetAllCitiesQuery } from "../features/citiesAPI";
+import { setCities } from "../features/citiesSlices";
 import Carousel from "./Carousel";
-import axios from "axios";
 
+function CarouselWrapper() {
+  const slides = useSelector((state) => state.cities.cities);
+  const dispatch = useDispatch();
 
-function CarouselWrapper (){
+  const { data } = useGetAllCitiesQuery();
 
-   const [slides, setSlides] = useState([]); 
+  useEffect(() => {
+    if (data) {
+      dispatch(setCities(data));
+    }
+  }, [data]);
 
-    useEffect(() => {
-        getCities().then(result => setSlides(result));
-    },[]);
-
-    const getCities = async () => {
-        const result = await axios.get(
-          `http://localhost:4000/cities`
-        );
-        return result.data;
-      };
-
-      return (<Carousel slides={slides}/>)
-
+  return <Carousel slides={slides} />;
 }
 export default CarouselWrapper;

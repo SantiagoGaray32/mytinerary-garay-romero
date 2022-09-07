@@ -1,56 +1,41 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { setNameFilter, setCities } from "../features/citiesSlices";
 import CityCard from "../components/CityCard";
 import "../styles/CitiesPage.css";
+import { useGetCityByNameAndTypeQuery } from "../features/citiesAPI";
 
 function Cities() {
-  const [cities, setCities] = useState([]);
-  const [filters, setFilters] = useState({
+  const nameFilter = useSelector((state) => state.cities.nameFilter);
+  const cities = useSelector((state) => state.cities.cities);
+  const dispatch = useDispatch();
+
+  const { data } = useGetCityByNameAndTypeQuery({
     type: "city",
-    name: "",
+    name: nameFilter,
   });
 
   useEffect(() => {
-    getCities(type, name).then((result) => setCities(result));
-    console.log("get cities");
-  }, []);
-
-  const { type, name } = filters;
-
-  const getCities = async (type, name) => {
-    const result = await axios.get(
-      `http://localhost:4000/cities?type=${type}&name=${name}`
-    );
-    return result.data;
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    //llamado a la api
-    const cities = await getCities(type, name);
-    //setear resultados
-    setCities(cities);
-  };
+    if (data) {
+      dispatch(setCities(data));
+    }
+  }, [data]);
 
   const handleChange = (e) => {
-    setFilters({
-      ...filters,
-      [e.target.name]: e.target.value,
-    });
+    dispatch(setNameFilter(e.target.value));
   };
 
   return (
     <div className="citiesContainer">
       <div className="background-cities">
         <div className="search-container">
-          <form onSubmit={handleSubmit}>
-           
+          <form>
             <p>Search city: </p>
 
             <input
               type="text"
-              name="name"
-              value={name}
+              name="city"
+              value={nameFilter}
               onChange={handleChange}
             />
 
@@ -60,10 +45,14 @@ function Cities() {
 
         <div className="CardContainer">
           <h2>Look for your next adventure</h2>
-        {cities.map((c) => (
-          <CityCard photo={c.photo} city={c.city} />
+          {cities.map((c) => (
+            <CityCard
+              key={`city-card-${c.photo}-${c.city}`}
+              photo={c.photo}
+              city={c.city}
+            />
           ))}
-          </div>
+        </div>
       </div>
     </div>
   );
