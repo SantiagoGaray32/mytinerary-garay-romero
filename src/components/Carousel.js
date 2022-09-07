@@ -1,51 +1,30 @@
 import { useEffect, useState } from "react";
-import paris from "../img/paris.jpg";
-import amsterdam from "../img/amsterdam.jpg";
-import dubai from "../img/dubai.jpg";
-import hong_kong from "../img/hong_kong.jpg";
-import las_vegas from "../img/las_vegas.jpg";
-import london from "../img/london.jpg";
-import montecarlo from "../img/montecarlo.jpg";
-import punta_cana from "../img/punta_cana.jpg";
-import roma from "../img/roma.jpg";
-import sidney from "../img/sidney.jpg";
-import tokyo from "../img/tokyo.jpg";
-import ibiza from "../img/ibiza.jpg";
 import "../styles/Carrousel.css";
-import axios from "axios";
 
 const listSlides = {};
 
 function Carousel(props) {
   const [sectionCarrousel, setSectionCarrousel] = useState(1);
 
-  const [sectionSlide, setSectionSlide] = useState([]);
-
-
-  useEffect(() =>{
-    
+  useEffect(() => {
     splitResult(props.slides);
-  },[props.slides])
- 
+  }, [props.slides]);
+
   useEffect(() => {
     let loop = setInterval(() => {
       foward();
     }, 4000);
-    
+
     return () => {
       clearInterval(loop);
     };
   }, [sectionCarrousel]);
 
-  const splitResult = result =>{
-    listSlides.slide0 = renderImg(result.slice(0,4));
-    listSlides.slide1 = renderImg(result.slice(4,8));
-    listSlides.slide2 = renderImg(result.slice(8,12));
-    console.log(listSlides);
-  }
-
- 
-
+  const splitResult = (result) => {
+    listSlides.slide0 = renderImg(result.slice(0, 4));
+    listSlides.slide1 = renderImg(result.slice(4, 8));
+    listSlides.slide2 = renderImg(result.slice(8, 12));
+  };
 
   const renderImg = (listCitys) => {
     return listCitys.map((city) => (
@@ -65,8 +44,6 @@ function Carousel(props) {
   const back = () => {
     setSectionCarrousel(sectionCarrousel <= 0 ? 2 : sectionCarrousel - 1);
   };
-
- 
 
   return (
     <div>

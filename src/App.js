@@ -5,8 +5,6 @@ import Home from "./pages/Home";
 import UnderConstruction from "./pages/UnderConstruction";
 import Cities from "./pages/Cities";
 import NewCity from "./pages/NewCities";
-import CityCard from "./components/CityCard";
-import Forms from "./components/Input.js";
 import ScrollToTop from "./components/ScrollToTop";
 import Details from "./pages/DetailsPage";
 import EditCity from "./pages/EditCity";

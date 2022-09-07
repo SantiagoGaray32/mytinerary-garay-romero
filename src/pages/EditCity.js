@@ -1,4 +1,4 @@
-import Input from "../components/Input";
+import Form from "../components/Form";
 import "../styles/EditCity.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -17,11 +17,11 @@ function EditCity() {
       <h1>Edit City</h1>
       <div>
         <select>
-          {cities.response?.map((city) => (
+          {cities.map((city) => (
             <Option city={city} />
           ))}
         </select>
-        <Input className="Input" />
+        <Form className="Input" />
       </div>
     </div>
   );
