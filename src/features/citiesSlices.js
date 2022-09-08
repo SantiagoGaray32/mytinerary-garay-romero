@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const citiesInitialState = {
   cities: [],
+  city: {},
   nameFilter: "",
   isLoading: false,
   hasErrors: false,
@@ -22,6 +23,10 @@ export const citiesSlice = createSlice({
       state.cities = action.payload;
       state.isLoading = false;
     },
+    setCity: (state, action) => {
+      state.city = action.payload;
+      state.isLoading = false;
+    },
     setNameFilter: (state, action) => {
       state.nameFilter = action.payload;
     },
@@ -36,6 +41,7 @@ export const citiesSlice = createSlice({
 
 export const {
   setCities,
+  setCity,
   setNameFilter,
   setNewCityFormData,
   resetNewCityFormData,

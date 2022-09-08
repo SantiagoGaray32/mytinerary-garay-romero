@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setNameFilter, setCities } from "../features/citiesSlices";
+import { useGetCityByNameAndTypeQuery } from "../features/citiesAPI";
 import CityCard from "../components/CityCard";
 import "../styles/CitiesPage.css";
-import { useGetCityByNameAndTypeQuery } from "../features/citiesAPI";
 
 function Cities() {
   const nameFilter = useSelector((state) => state.cities.nameFilter);
@@ -17,6 +17,7 @@ function Cities() {
 
   useEffect(() => {
     if (data) {
+      console.log("data", data);
       dispatch(setCities(data));
     }
   }, [data]);
@@ -48,6 +49,7 @@ function Cities() {
           {cities.map((c) => (
             <CityCard
               key={`city-card-${c.photo}-${c.city}`}
+              id={c._id}
               photo={c.photo}
               city={c.city}
             />

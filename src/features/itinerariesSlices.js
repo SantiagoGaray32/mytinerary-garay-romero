@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export const itinerariesSlice = createSlice({
-  name: "itinerary",
+  name: "itineraries",
   initialState: {
     itineraries: [],
     nameFilter: "",
