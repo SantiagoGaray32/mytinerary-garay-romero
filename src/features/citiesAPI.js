@@ -10,6 +10,9 @@ export const citiesAPI = createApi({
     getAllCities: builder.query({
       query: () => "/cities",
     }),
+    getCitiesById: builder.query({
+      query: (id) => `/cities/${id}`,
+    }),
     getCityByName: builder.query({
       query: (city) => `cities?city=${city}`,
     }),
@@ -26,15 +29,18 @@ export const citiesAPI = createApi({
       },
       invalidatesTags: ["Post"],
     }),
-    //Preguntar para mañana si debemos tener 2 createApi distintos para itinerios y cities
+    //Itineraries
     getAllItineraries: builder.query({
       query: () => "/itineraries",
     }),
     getItineraryByName: builder.query({
       query: (itinerary) => `itineraries?itinerary=${itinerary}`,
     }),
-    getItineraryByNameAndType: builder.query({
-      query: ({ type, name }) => `itineraries?type=${type}&name=${name}`,
+    getItinerariesByCityId: builder.query({
+      query: (id) => `itineraries?city=${id}`,
+    }),
+    getItinerariesByUserId: builder.query({
+      query: (id) => `itineraries?user=${id}`,
     }),
     getPostNewItinerary: builder.mutation({
       query(payload) {
@@ -46,18 +52,32 @@ export const citiesAPI = createApi({
       },
       invalidatesTags: ["Post"],
     }),
+    //Activities
+    getActivitiesByItineraryId: builder.query({
+      query: (id) => `activities?itinerary=${id}`,
+    }),
+    //Comments
+    getCommentsByItineraryId: builder.query({
+      query: (id) => `comments?itinerary=${id}`,
+    }),
   }),
 });
 
 export default citiesAPI;
 export const {
   useGetAllCitiesQuery,
+  useGetCitiesByIdQuery,
   useGetCityByNameQuery,
   useGetCityByNameAndTypeQuery,
   useGetPostNewCityMutation,
   //Itineraries
   useGetAllItinerariesQuery,
   useGetItineraryByNameQuery,
-  useGetItineraryByNameAndTypeQuery,
+  useGetItinerariesByCityIdQuery,
+  useGetItinerariesByUserIdQuery,
   useGetPostNewItineraryMutation,
+  //Activities
+  useGetActivitiesByItineraryIdQuery,
+  //Comments
+  useGetCommentsByItineraryIdQuery,
 } = citiesAPI;
