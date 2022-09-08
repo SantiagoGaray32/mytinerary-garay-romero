@@ -30,16 +30,15 @@ function Itinerary(props) {
           </div>
           <div className="itinerary-price-duration">
             <p>Price: ${it.price}</p>
-            <p>Duration: ${it.duration}hs.</p>
+            <p>Duration: {it.duration}min.</p>
           </div>
           <div className="itineraryTags">
             {it.tags.map((tag) => (
-              <p key={tag}>#{tag}</p>
+              <p key={tag}>{tag}</p>
             ))}
           </div>
           <div className="itineraryUser">
-            <p>name of the user who created the itinerary</p>
-            <h4>Santiago Garay</h4>
+            <h5>Santiago Garay</h5>
             <h6>User: SantiGaray</h6>
           </div>
         </div>
