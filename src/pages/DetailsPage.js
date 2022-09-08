@@ -2,9 +2,11 @@ import React from "react";
 import "../styles/Details.css";
 import Amsterdam from "../img/amsterdam.jpg";
 import LeftArrow from "../img/leftArrow.png";
+import Itinerary from "../components/Itinerary";
 import { Link } from "react-router-dom";
 
-function Details() {
+
+function Details({ children }) {
   return (
     <>
       <div className="detailsContainer">
@@ -19,6 +21,7 @@ function Details() {
             <p>Foundation:10-27-1275</p>
           </div>
         </div>
+        <Itinerary/>
 
         <div>
           <Link to={"/cities"} onClick={scrollUp}>

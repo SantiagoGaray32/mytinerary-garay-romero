@@ -45,7 +45,7 @@ import { Link } from "react-router-dom";
 function CityCard(props) {
   return (
     <div className="Card" key={props.photo}>
-      <img className="cardImg" src={props.photo}></img>
+      <Link to={'/details'}> <img className="cardImg" src={props.photo}></img></Link>
       <div className="cardBody">
         <h5>{props.city}</h5>
         <div className="cityCardButton">

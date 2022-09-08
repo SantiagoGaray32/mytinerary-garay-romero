@@ -13,15 +13,15 @@ function EditCity() {
   }, []);
   console.log(cities);
   return (
-    <div>
+    <div className="editCityContainer">
       <h1>Edit City</h1>
-      <div>
-        <select>
+      <div className="selectAndFormContainer">
+        <select className="selectEdit">
           {cities.map((city) => (
             <Option city={city} />
-          ))}
+            ))}
         </select>
-        <Form className="Input" />
+            <Form className="Input" />
       </div>
     </div>
   );
