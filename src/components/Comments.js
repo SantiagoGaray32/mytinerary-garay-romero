@@ -40,8 +40,6 @@ function Comments(props) {
     }
   }, [data]);
 
-  //const [dropdown, setDropdown] = useState(false);
-
   const handleOpen = () => {
     dispatch(setDropdown(!dropdown));
   };

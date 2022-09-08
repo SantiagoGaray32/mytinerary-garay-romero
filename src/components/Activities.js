@@ -4,25 +4,6 @@ import { setActivities } from "../features/activitiesSlices";
 import { useGetActivitiesByItineraryIdQuery } from "../features/citiesAPI";
 import "../styles/Activities.css";
 
-//   const activities = [
-//     {
-//       name: "Activity1",
-//       photo: "",
-//     },
-//     {
-//       name: "Activity2",
-//       photo: "",
-//     },
-//     {
-//       name: "Activity3",
-//       photo: "",
-//     },
-//     {
-//       name: "Activity4",
-//       photo: "",
-//     },
-//   ];
-
 function Activities(props) {
   const id = props.itineraryId;
   const { data } = useGetActivitiesByItineraryIdQuery(id);
@@ -30,7 +11,7 @@ function Activities(props) {
   const activities = useSelector((state) => state.activities.activities);
 
   useEffect(() => {
-    if (data /*&& data.success*/) {
+    if (data) {
       dispatch(setActivities(data));
     }
   }, [data]);
