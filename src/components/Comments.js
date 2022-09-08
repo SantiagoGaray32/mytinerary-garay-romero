@@ -40,7 +40,7 @@ function Comments(props) {
     }
   }, [data]);
 
-  //const [dropdown, setDropdown] = useState(false);
+//   const [dropdown, setDropdown] = useState(false);
 
   const handleOpen = () => {
     dispatch(setDropdown(!dropdown));
@@ -56,7 +56,7 @@ function Comments(props) {
             </h4>
           </div>
           <div className="comment-comment">
-            <p>{comment.message}</p>
+            <p>{comment.comment}</p>
           </div>
         </div>
       </div>
