@@ -1,0 +1,22 @@
+.itinerariesContainer{
+    width: 100%;
+    background-color: black;
+    border: solid 2px red;
+    /* height: 125px; */
+}
+.itinerary-price-duration{
+    width: 40.9%;
+    display: flex;
+    justify-content: space-evenly;
+    border: solid 2px;
+    margin: auto;
+}
+.itineraryTags{
+    width: 40%;
+    display: flex;
+    margin: auto;
+    justify-content: space-around;
+}
+.itineraryDescription{
+    background-color: rgb(10, 179, 122);
+}
