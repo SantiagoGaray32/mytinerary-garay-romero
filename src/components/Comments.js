@@ -35,8 +35,8 @@ function Comments(props) {
   const dropdown = useSelector((state) => state.comments.dropdown);
 
   useEffect(() => {
-    if (data /*&& data.success*/) {
-      dispatch(setComments(data));
+    if (data && data.success) {
+      dispatch(setComments(data.response));
     }
   }, [data]);
 

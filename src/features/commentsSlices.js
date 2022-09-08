@@ -4,7 +4,7 @@ export const commentsSlice = createSlice({
   name: "comments",
   initialState: {
     comments: [],
-    dropdown: true,
+    dropdown: false,
   },
   reducers: {
     setComments: (state, action) => {
