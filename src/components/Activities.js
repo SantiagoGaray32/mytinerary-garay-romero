@@ -30,8 +30,8 @@ function Activities(props) {
   const activities = useSelector((state) => state.activities.activities);
 
   useEffect(() => {
-    if (data /*&& data.success*/) {
-      dispatch(setActivities(data));
+    if (data && data.success) {
+      dispatch(setActivities(data.response));
     }
   }, [data]);
 
