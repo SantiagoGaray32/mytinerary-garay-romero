@@ -76,3 +76,6 @@ function Comments(props) {
 }
 
 export default Comments;
+
+
+// EL DROPDOWN ES UN ESTADO PROPIO DE COMMENTS, CORREGIR.
