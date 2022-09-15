@@ -20,7 +20,7 @@ function Itinerary(props) {
 
   const renderItinerary = (it) => {
     return (
-      <>
+      <div key={it._id}>
         <div>
           <h4>Itineraries:</h4>
         </div>
@@ -48,7 +48,7 @@ function Itinerary(props) {
         <div className="commentsContainer">
           <Comments itineraryId={it._id} />
         </div>
-      </>
+      </div>
     );
   };
 
