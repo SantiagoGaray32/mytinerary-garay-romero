@@ -8,7 +8,7 @@ function MyTineraries (){
         <>
             <h2>MyTineraries</h2>
             <div className="myTinerariesContainer"></div>
-            <Itinerary/>
+            {/* aca iria el nuevo componente MyTineraries, donde se mostraria los itinerarios por usuario loggeado */}
         </>
     )
 }

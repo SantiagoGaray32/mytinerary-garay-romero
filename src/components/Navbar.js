@@ -58,7 +58,7 @@ function Navbar() {
             <Link to={"/SignIn"}>Sign In</Link>
         </li>
         <li>
-           <Link to={"/SignUp"}>Sign Up</Link>
+           <Link to={"/auth/signup" }>Sign Up</Link>
         </li>
         </ul>
 
