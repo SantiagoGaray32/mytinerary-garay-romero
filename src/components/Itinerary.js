@@ -13,7 +13,7 @@ function Itinerary(props) {
   const { data } = useGetItinerariesByCityIdQuery(cityId);
 
   useEffect(() => {
-    if (data /*&& data.success*/) {
+    if (data && data.success) {
       dispatch(setItineraries(data.response));
     }
   }, [data]);

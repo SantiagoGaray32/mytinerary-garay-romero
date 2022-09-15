@@ -1,0 +1,12 @@
+.myTinerariesContainer{
+    background-image: url(../img/paris-background.jpg);
+    min-height: 90vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-size: cover;
+    font-style: italic;
+    background-position: 50%;
+    color: white;
+    flex-direction: column;
+}

@@ -4,28 +4,6 @@ import { setComments, setDropdown } from "../features/commentsSlices";
 import { useGetCommentsByItineraryIdQuery } from "../features/citiesAPI";
 import "../styles/Comments.css";
 
-// let comments = [
-//   {
-//     message:
-//       "wooow the activities are incredible, I'm going to keep saving because inflation is killing me and I do them",
-//     user: {
-//       name: "Keith",
-//       lastname: "Richards",
-//       photo: "",
-//       mail: "Krichards@rollingStone.com",
-//     },
-//   },
-//   {
-//     message:
-//       "How good are the activities, I already have a destination for my next vacation",
-//     user: {
-//       name: "Brian",
-//       lastname: "Johnson",
-//       photo: "",
-//       mail: "HighwaytoHell@acdc.com",
-//     },
-//   },
-// ];
 
 function Comments(props) {
   const id = props.itineraryId;
