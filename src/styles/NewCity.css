@@ -1,0 +1,28 @@
+.newCityContainer{
+    background-image: url(../img/Amsterdam-Background.jpg);
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    font-style: italic;
+    background-position: 50%;
+    color: white;
+    flex-direction: column;
+}
+
+.newCityText{
+
+    width: 80%;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.562);
+}
+.formContainerNewCity{
+    width: 320px;
+    margin: auto;
+    display: grid;
+    justify-content: center;
+    background-color: #f1cba5 ;
+    border-radius: 12px;  
+    font-size: 18px;
+}
