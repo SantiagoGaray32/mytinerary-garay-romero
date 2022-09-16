@@ -1,7 +1,5 @@
 .itinerariesContainer{
     width: 100%;
-    background-color: black;
-    border: solid 2px red;
     /* height: 125px; */
 }
 .itinerary-price-duration{
@@ -17,6 +15,14 @@
     margin: auto;
     justify-content: space-around;
 }
-.itineraryDescription{
-    background-color: rgb(10, 179, 122);
+.itineraryContainer{
+    background-color: #00000096;
+    margin: 1.5rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 12px;
+}
+.itineraryInfo{
+    margin: 1rem;
 }

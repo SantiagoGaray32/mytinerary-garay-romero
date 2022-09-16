@@ -47,22 +47,6 @@ function Navbar() {
         </ul>
       </div>
       <div>
-<<<<<<< HEAD
-        <input type="checkbox" id="btn-menu-user"></input>
-        <label htmlFor="btn-menu-user">
-          <img className="logoUser" src={User}></img>
-        </label>
-        <div className="menuUser">
-          <ul>
-            <li>
-              <Link to={"/SignIn"}>Sign In</Link>
-            </li>
-            <li>
-              <Link to={"/auth/signup"}>Sign Up</Link>
-            </li>
-          </ul>
-        </div>
-=======
       <input type="checkbox" id="btn-menu-user"></input>
       <label htmlFor="btn-menu-user">
         <img className="logoUser" src={User}></img>
@@ -78,7 +62,7 @@ function Navbar() {
         </ul>
 
         </div>   
->>>>>>> ca9438a818e93f893ad93f7e1eb40b7c8752a9aa
+
       </div>
     </div>
   );

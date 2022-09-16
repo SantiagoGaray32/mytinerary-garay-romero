@@ -10,3 +10,29 @@
     color: white;
     flex-direction: column;
 }
+
+.SignUpFormContainer{
+    width: 300px;
+    background-color: rgb(143 119 155);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 12px;
+    height: 420px;
+}
+.button {
+    border-radius: 5px;
+    padding: 4px;
+    background: #007bff;
+    color: white;
+    font-family: system-ui;
+    font-size: 16px;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+#SignUpButtom{
+    width: 50%;
+}

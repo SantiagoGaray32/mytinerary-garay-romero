@@ -6,8 +6,11 @@ import "../styles/SignUp.css";
 export default function SignUp() {
   return (
     <div className="SignUpcontainer">
-      <SignUpGoogle />
-      <SignUpForm />
+      <h2>Sign Up</h2>
+      <div className="SignUpFormContainer">
+        <SignUpForm />
+        <SignUpGoogle />
+      </div>
     </div>
   );
 }
