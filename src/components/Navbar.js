@@ -1,17 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { signOut } from "../features/usersSlices";
 import "../styles/Navbar.css";
 import User from "../img/user.png";
 import logoMenu from "../img/menu.png";
-import { Link } from "react-router-dom";
-import UnderConstruction from "../pages/UnderConstruction";
+
 import logoApp from "../img/logoMyT.jpg";
-import { useState } from "react";
 
 function Navbar() {
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user.user);
   const [open, setOpen] = useState(false);
+
   const handleOpen = () => {
-    open ? setOpen(false) : setOpen(true);
+    setOpen(!open);
   };
+
+  const handleSignOut = () => {
+    dispatch(signOut());
+    localStorage.removeItem("useriInfo");
+  };
+
 
   //   <div>
   //   <Link to={"/cities"} onClick={scrollUp}>
@@ -25,11 +35,13 @@ function Navbar() {
       <label htmlFor="btn-menu">
         <img className="logoMenu" src={logoMenu}></img>
       </label>
-      <div className="menu">
+      <nav className="menu">
         <ul>
           <li id="logoMyT">
             <p>
-              <img className="logoApp" src={logoApp}></img>
+              <Link to={"/"}>
+                <img className="logoApp" src={logoApp}></img>
+              </Link>
             </p>
           </li>
           <li>
@@ -44,24 +56,38 @@ function Navbar() {
           <li>
             <Link to={"/editCity"}>Edit City</Link>
           </li>
+          {user?.id && ( //short circuit => user.logged && mostra esto | ternario => user.logged ? mostra esto : sino esto
+            <li>
+              <Link to={"/newitinerary"}>My itineraries</Link>
+            </li>
+          )}
         </ul>
-      </div>
-      <div>
-      <input type="checkbox" id="btn-menu-user"></input>
-      <label htmlFor="btn-menu-user">
-        <img className="logoUser" src={User}></img>
-      </label>
-      <div className="menuUser">
-        <ul>
-        <li>
-            <Link to={"/SignIn"}>Sign In</Link>
-        </li>
-        <li>
-           <Link to={"/auth/signup" }>Sign Up</Link>
-        </li>
-        </ul>
+      </nav>
 
-        </div>   
+      <div className="profile-photo">
+        <label htmlFor="btn-menu-user">
+          <img className="logoUser" src={User} onClick={handleOpen}></img>
+        </label>
+        {open && (
+          <div className="menuUser">
+            <ul>
+              {user?.id ? (
+                <li>
+                  <button onClick={handleSignOut}>Sign Out</button>
+                </li>
+              ) : (
+                <>
+                  <li>
+                    <Link to={"/SignIn"}>Sign In</Link>
+                  </li>
+                  <li>
+                    <Link to={"/auth/signup"}>Sign Up</Link>
+                  </li>
+                </>
+              )}
+            </ul>
+          </div>
+        )}
 
       </div>
     </div>

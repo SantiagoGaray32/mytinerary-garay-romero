@@ -8,8 +8,8 @@ export default function SignUp() {
     <div className="SignUpcontainer">
       <h2>Sign Up</h2>
       <div className="SignUpFormContainer">
-        <SignUpForm />
-        <SignUpGoogle />
+      <SignUpForm role="admin" />
+      <SignUpGoogle />
       </div>
     </div>
   );

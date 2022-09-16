@@ -1,11 +1,11 @@
 import React from "react";
-import NewItinerary from "../components/NewItinerary";
+import UserItineraries from "../components/UserItineraries";
 import UnderConstruction from "./UnderConstruction";
 
 function NewItineraryPage() {
   return (
     <>
-      <NewItinerary />
+      <UserItineraries />
       <UnderConstruction />
     </>
   );

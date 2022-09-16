@@ -43,6 +43,9 @@ export const citiesAPI = createApi({
     getItinerariesByUserId: builder.query({
       query: (id) => `itineraries?user=${id}`,
     }),
+    getAllItinerariesByUserId: builder.query({
+      query: (userId) => `itineraries/${userId}`,
+    }),
     getPostNewItinerary: builder.mutation({
       query(payload) {
         return {
@@ -97,6 +100,7 @@ export const {
   useGetItineraryByNameQuery,
   useGetItinerariesByCityIdQuery,
   useGetItinerariesByUserIdQuery,
+  useGetAllItinerariesByUserIdQuery,
   useGetPostNewItineraryMutation,
   //Activities
   useGetActivitiesByItineraryIdQuery,
