@@ -4,6 +4,7 @@ import { citiesSlice } from "./features/citiesSlices";
 import { itinerariesSlice } from "./features/itinerariesSlices";
 import { activitiesSlice } from "./features/activitiesSlices";
 import { commentsSlice } from "./features/commentsSlices";
+import { usersSlice } from "./features/usersSlices";
 
 export default configureStore({
   reducer: {
@@ -12,6 +13,7 @@ export default configureStore({
     [itinerariesSlice.name]: itinerariesSlice.reducer,
     [activitiesSlice.name]: activitiesSlice.reducer, // ["activities"]: activitiesSlice.reducer
     [commentsSlice.name]: commentsSlice.reducer,
+    [usersSlice.name]: usersSlice.reducer,
   },
   middleware: (getAllCities) =>
     getAllCities({

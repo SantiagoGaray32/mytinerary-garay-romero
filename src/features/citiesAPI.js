@@ -19,7 +19,8 @@ export const citiesAPI = createApi({
     getCityByNameAndType: builder.query({
       query: ({ type, name }) => `cities?type=${type}&name=${name}`,
     }),
-    getPostNewCity: builder.mutation({ //PONER NOMBRES CLAROS, CAMBIAR GET EN LOS MUTATION
+    getPostNewCity: builder.mutation({
+      //PONER NOMBRES CLAROS, CAMBIAR GET EN LOS MUTATION
       query(payload) {
         return {
           url: "cities",
@@ -60,6 +61,27 @@ export const citiesAPI = createApi({
     getCommentsByItineraryId: builder.query({
       query: (id) => `comments?itinerary=${id}`,
     }),
+    //Users
+    postUser: builder.mutation({
+      query: (dataNewUser) => ({
+        url: "/auth/signup",
+        method: "POST",
+        body: dataNewUser,
+      }),
+    }),
+    postUserSingIn: builder.mutation({
+      query: (user) => ({
+        url: "/auth/signin",
+        method: "POST",
+        body: user,
+      }),
+    }),
+    postUserSingOut: builder.mutation({
+      query: (mail) => ({
+        url: `/auth/signout/${mail}`,
+        method: "PUT",
+      }),
+    }),
   }),
 });
 
@@ -80,4 +102,8 @@ export const {
   useGetActivitiesByItineraryIdQuery,
   //Comments
   useGetCommentsByItineraryIdQuery,
+  //Users
+  usePostUserMutation,
+  usePostUserSingInMutation,
+  usePostUserSingOutMutation,
 } = citiesAPI;
