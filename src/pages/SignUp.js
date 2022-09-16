@@ -7,7 +7,7 @@ export default function SignUp() {
   return (
     <div className="SignUpcontainer">
       <SignUpGoogle />
-      <SignUpForm />
+      <SignUpForm role="admin" />
     </div>
   );
 }
