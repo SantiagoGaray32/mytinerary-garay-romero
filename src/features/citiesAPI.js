@@ -19,7 +19,7 @@ export const citiesAPI = createApi({
     getCityByNameAndType: builder.query({
       query: ({ type, name }) => `cities?type=${type}&name=${name}`,
     }),
-    getPostNewCity: builder.mutation({ //PONER NOMBRES CLAROS, CAMBIAR GET EN LOS MUTATION
+    getPostNewCity: builder.mutation({
       query(payload) {
         return {
           url: "cities",
