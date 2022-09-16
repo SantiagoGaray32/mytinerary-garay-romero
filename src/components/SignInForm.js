@@ -4,6 +4,7 @@ import { Navigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { usePostUserSingInMutation } from "../features/citiesAPI";
 import { setUser } from "../features/usersSlices";
+import "../styles/SignInForm.css"
 
 export default function SingInForm() {
   const dispatch = useDispatch();
@@ -58,6 +59,7 @@ export default function SingInForm() {
   return (
     <div className="SingInForm-container">
       <form onSubmit={saveData} className="SingInForm-form">
+        <p>Sign In</p>
         <input
           onChange={captureData}
           name="email"
@@ -74,7 +76,7 @@ export default function SingInForm() {
           type="password"
           required
         />
-        <button className="SingInFor-btn">Sing In</button>
+        <button id="SingInFormButton" className="SingInFor-btn">Sign In</button>
       </form>
     </div>
   );
