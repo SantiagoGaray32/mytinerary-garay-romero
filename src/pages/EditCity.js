@@ -27,3 +27,7 @@ function EditCity() {
   );
 }
 export default EditCity;
+
+
+
+// CORREGIR METODO EN VEZ DE POST VA PATCH

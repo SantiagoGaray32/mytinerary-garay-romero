@@ -1,31 +1,12 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setComments, setDropdown } from "../features/commentsSlices";
+import {
+  setComments,
+  toggleDropdown,
+  createDropdown,
+} from "../features/commentsSlices";
 import { useGetCommentsByItineraryIdQuery } from "../features/citiesAPI";
 import "../styles/Comments.css";
-
-// let comments = [
-//   {
-//     message:
-//       "wooow the activities are incredible, I'm going to keep saving because inflation is killing me and I do them",
-//     user: {
-//       name: "Keith",
-//       lastname: "Richards",
-//       photo: "",
-//       mail: "Krichards@rollingStone.com",
-//     },
-//   },
-//   {
-//     message:
-//       "How good are the activities, I already have a destination for my next vacation",
-//     user: {
-//       name: "Brian",
-//       lastname: "Johnson",
-//       photo: "",
-//       mail: "HighwaytoHell@acdc.com",
-//     },
-//   },
-// ];
 
 function Comments(props) {
   const id = props.itineraryId;
@@ -35,20 +16,26 @@ function Comments(props) {
   const dropdown = useSelector((state) => state.comments.dropdown);
 
   useEffect(() => {
+    dispatch(createDropdown(id));
+  }, []);
+
+  useEffect(() => {
     if (data && data.success) {
-      dispatch(setComments(data.response));
+      const commentByItineraryId = {
+        itineraryId: id,
+        comments: data.response,
+      };
+      dispatch(setComments(commentByItineraryId));
     }
   }, [data]);
 
-//   const [dropdown, setDropdown] = useState(false);
-
   const handleOpen = () => {
-    dispatch(setDropdown(!dropdown));
+    dispatch(toggleDropdown(id));
   };
 
   const render = (comment) => {
     return (
-      <div className="commentCard">
+      <div className="commentCard" key={comment._id}>
         <div className="commentDescription">
           <div className="commentUser">
             <h4>
@@ -66,11 +53,12 @@ function Comments(props) {
   return (
     <div className="CommentsContainer">
       <button id="commentButton" type="button" onClick={handleOpen}>
-        {dropdown ? "Close " : ""} Comments{" "}
+        {dropdown[id] ? "Close" : ""} Comments
       </button>
-      {dropdown ? (
-        <div className="CommentsContainer">{comments.map(render)}</div>
-      ) : null}
+      {dropdown[id] && (
+        //Short circuit
+        <div className="CommentsContainer">{comments[id].map(render)}</div>
+      )}
     </div>
   );
 }
