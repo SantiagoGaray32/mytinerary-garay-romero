@@ -119,7 +119,7 @@ a {
     border-top: 1px solid white;
   }
   #btn-menu:checked ~ .menu {
-    margin: 0;
+    margin: 75px 0px;
     z-index: 1;
   }
   #logoMyT {
