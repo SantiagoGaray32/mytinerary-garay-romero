@@ -5,6 +5,7 @@ import { signOut } from "../features/usersSlices";
 import "../styles/Navbar.css";
 import User from "../img/user.png";
 import logoMenu from "../img/menu.png";
+
 import logoApp from "../img/logoMyT.jpg";
 
 function Navbar() {
@@ -20,6 +21,7 @@ function Navbar() {
     dispatch(signOut());
     localStorage.removeItem("useriInfo");
   };
+
 
   //   <div>
   //   <Link to={"/cities"} onClick={scrollUp}>
@@ -86,6 +88,7 @@ function Navbar() {
             </ul>
           </div>
         )}
+
       </div>
     </div>
   );

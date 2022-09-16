@@ -51,6 +51,7 @@ export default function SingUpForm(props) {
       <p className="signup-title">
         {role === "admin" ? "Sign Up" : " New Admin"}
       </p>
+
       <form
         className="Singup-form"
         onSubmit={saveData}
@@ -104,7 +105,7 @@ export default function SingUpForm(props) {
           placeholder="Country"
           required
         />
-        <button className="Singup-btn">Sign Up</button>
+        <button id="SignUpButtom" className="Singup-btn">Sign Up</button>
       </form>
     </div>
   );
