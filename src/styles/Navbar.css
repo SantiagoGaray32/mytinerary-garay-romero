@@ -2,11 +2,11 @@
   margin: 0;
 }
 
-a :active{
+a :active {
   font-weight: bold;
 }
 
-a{
+a {
   font-style: italic;
   font-size: 20px;
 }
@@ -15,9 +15,7 @@ a{
   width: 100%;
   background-color: #7c7281;
   min-height: 10vh;
-}
-#btn-menu {
-  display: none;
+  display: flex;
 }
 
 .navContainer label {
@@ -26,6 +24,7 @@ a{
   height: 30px;
   padding: 10px;
 }
+
 .navContainer label:hover {
   cursor: pointer;
 }
@@ -45,13 +44,69 @@ a{
   text-decoration: none;
 }
 
+.profile-photo {
+  display: flex;
+  width: 3rem;
+  margin-left: auto;
+}
+
+.profile-photo label {
+  display: block;
+}
+
+.logoUser {
+  width: 30px;
+  border-radius: 50%;
+}
+.logoMenu {
+  width: 30px;
+  height: 30px;
+}
+.logoApp {
+  width: 60px;
+  border-radius: 10px;
+}
+
+.menuUser {
+  display: block;
+  background-color: red;
+  position: absolute;
+  top: 4rem;
+  right: 0;
+}
+
+.menuUser ul {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menuUser li {
+  display: block;
+  padding: 15px 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* configuracion para el menu de usuarios */
+#btn-menu {
+  display: none;
+}
+
+#btn-menu-user {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .navContainer label {
     display: block;
   }
   .menu {
     position: absolute;
-    background-color:#7c7281;
+    background-color: #7c7281;
     width: 70%;
     margin-left: -70%;
     transition: all 0.5s;
@@ -67,28 +122,9 @@ a{
     margin: 0;
     z-index: 1;
   }
-  #logoMyT{
+  #logoMyT {
     display: none;
   }
-}
-.logoUser {
-  width: 30px;
-  border-radius: 50%;
-}
-.logoMenu {
-  width: 30px;
-  height: 30px;
-}
-.logoApp{
-  width: 60px;
-  border-radius: 10px;
-}
-
-
-/* configuracion para el menu de usuarios */
-
-#btn-menu-user {
-  display: none;
 }
 
 @media (max-width: 768px) {
@@ -97,7 +133,7 @@ a{
   }
   .menuUser {
     position: absolute;
-    background-color:#7c7281;
+    background-color: #7c7281;
     width: 70%;
     margin-left: -70%;
     transition: all 0.5s;
@@ -113,22 +149,7 @@ a{
     margin: 0;
     z-index: 1;
   }
-  #logoMyT{
+  #logoMyT {
     display: none;
   }
-}
-
-.menuUser ul {
-  margin: 0;
-  list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: space-between;
-}
-
-.menuUser li {
-  display: block;
-  padding: 15px 20px;
-  color: #fff;
-  text-decoration: none;
 }
