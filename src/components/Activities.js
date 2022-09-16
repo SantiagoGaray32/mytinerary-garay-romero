@@ -38,6 +38,7 @@ function Activities(props) {
   const render = (activity) => {
     return (
       <div key={activity._id} className="activity-Card">
+        <h6>Activity:</h6>
         <p>{activity.name}</p>
       </div>
     );

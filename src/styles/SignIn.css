@@ -10,3 +10,13 @@
     color: white;
     flex-direction: column;
 }
+.SignInFromContainer{
+    width: 280px;
+    background-color: #8b7099;
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 12px;
+    align-items: center;
+}

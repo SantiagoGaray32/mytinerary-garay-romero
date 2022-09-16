@@ -20,15 +20,13 @@ function Itinerary(props) {
 
   const renderItinerary = (it) => {
     return (
-      <div key={it._id}>
+      <div className="itineraryContainer" key={it._id}>
         <div>
-          <h4>Itineraries:</h4>
+          <h4>Itinerary:<p>{it.itinerary}</p></h4>
         </div>
         <div className="itineraryDescription">
           <div className="itineraryInfo">
-            <p>{it.itinerary}</p>
-          </div>
-          <div className="itinerary-price-duration">
+            <h5>Itinerary information:</h5>
             <p>Price: ${it.price}</p>
             <p>Duration: {it.duration}min.</p>
           </div>
@@ -36,10 +34,6 @@ function Itinerary(props) {
             {it.tags.map((tag) => (
               <p key={tag}>{tag}</p>
             ))}
-          </div>
-          <div className="itineraryUser">
-            <h5>Santiago Garay</h5>
-            <h6>User: SantiGaray</h6>
           </div>
         </div>
         <div className="activitiesContainer">
@@ -51,7 +45,6 @@ function Itinerary(props) {
       </div>
     );
   };
-
   return (
     <div className="itinerariesContainer">
       {itineraries.map((it) => renderItinerary(it))}
