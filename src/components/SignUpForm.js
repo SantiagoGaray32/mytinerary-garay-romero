@@ -2,8 +2,9 @@ import { useState } from "react";
 import { usePostUserMutation } from "../features/citiesAPI";
 import "../styles/SignUp.css";
 
-export default function SingUpForm() {
+export default function SingUpForm(props) {
   const [newUser] = usePostUserMutation();
+  const { role } = props;
 
   const [form, setForm] = useState({
     name: "",
@@ -12,7 +13,7 @@ export default function SingUpForm() {
     password: "",
     photo: "",
     country: "",
-    role: "user",
+    role: role,
     from: "form",
   });
 
@@ -32,13 +33,13 @@ export default function SingUpForm() {
       password: form.password,
       photo: form.photo,
       country: form.country,
-      role: "user",
+      role: form.role,
       from: "form",
     };
 
     newUser(userData).then((res) => {
       if (res.data.success) {
-        window.location.replace("/singin");
+        window.location.replace("/signin");
       }
     });
 
@@ -47,6 +48,9 @@ export default function SingUpForm() {
 
   return (
     <div className="Singup-container">
+      <p className="signup-title">
+        {role === "admin" ? "Sign Up" : " New Admin"}
+      </p>
       <form
         className="Singup-form"
         onSubmit={saveData}
