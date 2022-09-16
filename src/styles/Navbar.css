@@ -83,3 +83,52 @@ a{
   width: 60px;
   border-radius: 10px;
 }
+
+
+/* configuracion para el menu de usuarios */
+
+#btn-menu-user {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navContainer label {
+    display: block;
+  }
+  .menuUser {
+    position: absolute;
+    background-color:#7c7281;
+    width: 70%;
+    margin-left: -70%;
+    transition: all 0.5s;
+    margin-top: 10px;
+  }
+  .menuUser ul {
+    flex-direction: column;
+  }
+  .menuUser li {
+    border-top: 1px solid white;
+  }
+  #btn-menu-User:checked ~ .menuUser {
+    margin: 0;
+    z-index: 1;
+  }
+  #logoMyT{
+    display: none;
+  }
+}
+
+.menuUser ul {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menuUser li {
+  display: block;
+  padding: 15px 20px;
+  color: #fff;
+  text-decoration: none;
+}

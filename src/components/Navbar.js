@@ -5,8 +5,23 @@ import logoMenu from "../img/menu.png";
 import { Link } from "react-router-dom";
 import UnderConstruction from "../pages/UnderConstruction";
 import logoApp from "../img/logoMyT.jpg"
+import {useState} from "react"
 
 function Navbar() {
+
+  const [open, setOpen] = useState(false)
+  const handleOpen = () => {
+      open ?
+          setOpen(false)
+          : setOpen(true)
+  }
+
+//   <div>
+//   <Link to={"/cities"} onClick={scrollUp}>
+//     <img className="leftArrow" src={LeftArrow}></img>
+//   </Link>
+// </div>
+
   return (
     <div className="navContainer">
       <input type="checkbox" id="btn-menu"></input>
@@ -30,15 +45,31 @@ function Navbar() {
           <li>
             <Link to={"/editCity"}>Edit City</Link>
           </li>
-          <li>
-            <p>
-              <img className="logoUser" src={User}></img>
-            </p>
-          </li>
         </ul>
       </div>
+      <div>
+      <input type="checkbox" id="btn-menu-user"></input>
+      <label htmlFor="btn-menu-user">
+        <img className="logoUser" src={User}></img>
+      </label>
+      <div className="menuUser">
+        <ul>
+        <li>
+            <Link to={"/SignIn"}>Sign In</Link>
+        </li>
+        <li>
+           <Link to={"/auth/signup" }>Sign Up</Link>
+        </li>
+        </ul>
+
+        </div>   
+      </div>
+   
     </div>
   );
 }
 
 export default Navbar;
+
+
+// menu del usuario
