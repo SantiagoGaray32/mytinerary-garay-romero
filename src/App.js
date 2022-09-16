@@ -9,8 +9,9 @@ import ScrollToTop from "./components/ScrollToTop";
 import Details from "./pages/DetailsPage";
 import EditCity from "./pages/EditCity";
 import MyTineraries from "./pages/MyTineraries";
-import SignIn from "./components/SignIn";
+import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
+import NewItinerary from "./pages/NewItinerary";
 
 function App() {
   return (
@@ -19,15 +20,16 @@ function App() {
         <ScrollToTop>
           <WebsiteLayout>
             <Routes>
-              <Route path="/NewCity" element={<NewCity />} />
+              <Route path="/newcity" element={<NewCity />} />
               <Route path="/" element={<Home />} />
               <Route path="/auth/signup" element={<SignUp />} />
               <Route path="/cities" element={<Cities />} />
               <Route path="/*" element={<UnderConstruction />} />
               <Route path="/details/:id" element={<Details />} />
-              <Route path="/editCity" element={<EditCity />} />
-              <Route path="/Mytineraries" element={<MyTineraries />} />
-              <Route path="/SignIn" element={<SignIn/>} />
+              <Route path="/editcity" element={<EditCity />} />
+              <Route path="/mytineraries" element={<MyTineraries />} />
+              <Route path="/newitinerary" element={<NewItinerary />} />
+              <Route path="/signin" element={<SignIn />} />
             </Routes>
           </WebsiteLayout>
         </ScrollToTop>

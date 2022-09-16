@@ -4,23 +4,20 @@ import User from "../img/user.png";
 import logoMenu from "../img/menu.png";
 import { Link } from "react-router-dom";
 import UnderConstruction from "../pages/UnderConstruction";
-import logoApp from "../img/logoMyT.jpg"
-import {useState} from "react"
+import logoApp from "../img/logoMyT.jpg";
+import { useState } from "react";
 
 function Navbar() {
-
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
   const handleOpen = () => {
-      open ?
-          setOpen(false)
-          : setOpen(true)
-  }
+    open ? setOpen(false) : setOpen(true);
+  };
 
-//   <div>
-//   <Link to={"/cities"} onClick={scrollUp}>
-//     <img className="leftArrow" src={LeftArrow}></img>
-//   </Link>
-// </div>
+  //   <div>
+  //   <Link to={"/cities"} onClick={scrollUp}>
+  //     <img className="leftArrow" src={LeftArrow}></img>
+  //   </Link>
+  // </div>
 
   return (
     <div className="navContainer">
@@ -31,7 +28,9 @@ function Navbar() {
       <div className="menu">
         <ul>
           <li id="logoMyT">
-            <p><img className="logoApp"  src={logoApp}></img></p>
+            <p>
+              <img className="logoApp" src={logoApp}></img>
+            </p>
           </li>
           <li>
             <Link to={"/"}>Home</Link>
@@ -48,6 +47,22 @@ function Navbar() {
         </ul>
       </div>
       <div>
+<<<<<<< HEAD
+        <input type="checkbox" id="btn-menu-user"></input>
+        <label htmlFor="btn-menu-user">
+          <img className="logoUser" src={User}></img>
+        </label>
+        <div className="menuUser">
+          <ul>
+            <li>
+              <Link to={"/SignIn"}>Sign In</Link>
+            </li>
+            <li>
+              <Link to={"/auth/signup"}>Sign Up</Link>
+            </li>
+          </ul>
+        </div>
+=======
       <input type="checkbox" id="btn-menu-user"></input>
       <label htmlFor="btn-menu-user">
         <img className="logoUser" src={User}></img>
@@ -63,13 +78,12 @@ function Navbar() {
         </ul>
 
         </div>   
+>>>>>>> ca9438a818e93f893ad93f7e1eb40b7c8752a9aa
       </div>
-   
     </div>
   );
 }
 
 export default Navbar;
-
 
 // menu del usuario
