@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import WebsiteLayout from "./layouts/WebsiteLayout";
 import Home from "./pages/Home";
@@ -12,28 +12,36 @@ import MyTineraries from "./pages/MyTineraries";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import NewItinerary from "./pages/NewItinerary";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
+
   return (
     <div className="App">
-      <BrowserRouter>
         <ScrollToTop>
           <WebsiteLayout>
             <Routes>
-              <Route path="/newcity" element={<NewCity />} />
+              <Route path="/newcity" element={<PrivateRoute role="admin"/>}>
+                <Route path="/newcity" element={<NewCity />} />
+              </Route>
+              <Route path="/editcity" element={<PrivateRoute role="admin"/>}>
+                <Route path="/editcity" element={<EditCity />} />
+              </Route>
+              <Route path="/mytineraries" element={<PrivateRoute/>}>
+                <Route path="/mytineraries" element={<MyTineraries />} />
+              </Route>
+              <Route path="/newitinerary" element={<PrivateRoute/>}>
+                <Route path="/newitinerary" element={<NewItinerary />} />
+              </Route>
               <Route path="/" element={<Home />} />
               <Route path="/auth/signup" element={<SignUp />} />
               <Route path="/cities" element={<Cities />} />
               <Route path="/*" element={<UnderConstruction />} />
               <Route path="/details/:id" element={<Details />} />
-              <Route path="/editcity" element={<EditCity />} />
-              <Route path="/mytineraries" element={<MyTineraries />} />
-              <Route path="/newitinerary" element={<NewItinerary />} />
               <Route path="/signin" element={<SignIn />} />
             </Routes>
           </WebsiteLayout>
         </ScrollToTop>
-      </BrowserRouter>
     </div>
   );
 }
