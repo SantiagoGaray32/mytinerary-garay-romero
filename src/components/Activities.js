@@ -4,24 +4,7 @@ import { setActivities } from "../features/activitiesSlices";
 import { useGetActivitiesByItineraryIdQuery } from "../features/citiesAPI";
 import "../styles/Activities.css";
 
-//   const activities = [
-//     {
-//       name: "Activity1",
-//       photo: "",
-//     },
-//     {
-//       name: "Activity2",
-//       photo: "",
-//     },
-//     {
-//       name: "Activity3",
-//       photo: "",
-//     },
-//     {
-//       name: "Activity4",
-//       photo: "",
-//     },
-//   ];
+
 
 function Activities(props) {
   const id = props.itineraryId;
