@@ -11,6 +11,8 @@ import logoApp from "../img/logoMyT.jpg";
 function Navbar() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.user);
+  console.log("user", user.id);
+
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -22,12 +24,6 @@ function Navbar() {
     localStorage.removeItem("useriInfo");
   };
 
-
-  //   <div>
-  //   <Link to={"/cities"} onClick={scrollUp}>
-  //     <img className="leftArrow" src={LeftArrow}></img>
-  //   </Link>
-  // </div>
 
   return (
     <div className="navContainer">
@@ -48,19 +44,24 @@ function Navbar() {
             <Link to={"/"}>Home</Link>
           </li>
           <li>
-            <Link to={"/Cities"}>Cities</Link>
+            <Link to={"/cities"}>Cities</Link>
           </li>
-          <li>
-            <Link to={"/NewCity"}>New City</Link>
-          </li>
-          <li>
-            <Link to={"/editCity"}>Edit City</Link>
-          </li>
-          {user?.id && ( //short circuit => user.logged && mostra esto | ternario => user.logged ? mostra esto : sino esto
+          {user?.id && 
             <li>
               <Link to={"/newitinerary"}>My itineraries</Link>
             </li>
+          }
+          {user?.role === "admin" && ( //short circuit => user.logged && mostra esto | ternario => user.logged ? mostra esto : sino esto
+            <>
+            <li>
+              <Link to={"/newcity"}>New City</Link>
+            </li>
+            <li>
+              <Link to={"/editcity"}>Edit City</Link>
+            </li>
+          </>
           )}
+          
         </ul>
       </nav>
 
@@ -78,7 +79,7 @@ function Navbar() {
               ) : (
                 <>
                   <li>
-                    <Link to={"/SignIn"}>Sign In</Link>
+                    <Link to={"/signin"}>Sign In</Link>
                   </li>
                   <li>
                     <Link to={"/auth/signup"}>Sign Up</Link>
