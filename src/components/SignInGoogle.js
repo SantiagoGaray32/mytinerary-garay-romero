@@ -2,12 +2,14 @@ import * as jose from "jose";
 import { useState, useEffect, useRef } from "react";
 import { Navigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { usePostUserSingInMutation } from "../features/citiesAPI";
+import { usePostUserSingInMutation, useSignInTokenMutation } from "../features/citiesAPI";
 import { setUser } from "../features/usersSlices";
+
 
 export default function SingInGoogle() {
   const dispatch = useDispatch();
   const [login] = usePostUserSingInMutation();
+  const [SignIn] = useSignInTokenMutation();
   const [shouldRedirect, setShouldRedirect] = useState(false);
   const [wantToRedirect, setWantToRedirect] = useState(false);
 
@@ -17,7 +19,7 @@ export default function SingInGoogle() {
   // console.log(buttonDiv.current)
 
   useEffect(() => {
-    /* global google */
+    /* global google*/
     google.accounts.id.initialize({
       client_id:
         "858987294668-ujt6gjb9nmuhec61k7kavpnmva2lunt5.apps.googleusercontent.com",
@@ -58,11 +60,10 @@ export default function SingInGoogle() {
 
     login(user).then((res) => {
       if (res.data.success) {
-        const loggedUser = res.data.response.user;
-        dispatch(setUser(loggedUser));
-        localStorage.setItem("useriInfo", JSON.stringify(loggedUser));
+        const loggedUser = res.data.response;
+        dispatch(setUser(loggedUser.user));
+        localStorage.setItem("token", JSON.stringify(loggedUser.token));
         setWantToRedirect(true);
-        //window.location.replace("/");
       }
     });
   }
@@ -77,3 +78,5 @@ export default function SingInGoogle() {
     </>
   );
 }
+
+//investigar el navigate par mejorarlo Corregir, los windows location.

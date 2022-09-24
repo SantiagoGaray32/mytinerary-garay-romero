@@ -40,7 +40,7 @@ export default function SingInForm() {
     };
 
     userLogin(userData).then((res) => {
-      if (res.data.success) {
+      if (res.data) {
         const loggedUser = res.data.response.user;
         dispatch(setUser(loggedUser));
         localStorage.setItem("useriInfo", JSON.stringify(loggedUser));
