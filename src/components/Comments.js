@@ -39,7 +39,7 @@ function Comments(props) {
         <div className="commentDescription">
           <div className="commentUser">
             <h4>
-              {comment.user.name} {""} {comment.user.lastname}
+              {comment.user.name} {comment.user.lastname}
             </h4>
           </div>
           <div className="comment-comment">
