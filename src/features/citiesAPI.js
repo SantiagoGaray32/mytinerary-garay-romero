@@ -46,6 +46,14 @@ export const citiesAPI = createApi({
     getAllItinerariesByUserId: builder.query({
       query: (userId) => `itineraries/${userId}`,
     }),
+    likeDislike: builder.mutation({
+      query: (payload) => ({
+        url: `/itineraries/likes`,
+        method: 'POST',
+        headers: {authorization: `Bearer ${localStorage.getItem("token")}`},
+        body: payload
+      })
+    }),
     getPostNewItinerary: builder.mutation({
       query(payload) {
         return {
@@ -79,6 +87,13 @@ export const citiesAPI = createApi({
         body: user,
       }),
     }),
+    signInToken : builder.mutation({
+      query: (token) => ({
+        url: "/auth/token",
+        method: "GET",
+        headers: {authorization: "Bearer" +token} 
+      })
+    }),
     postUserSingOut: builder.mutation({
       query: (mail) => ({
         url: `/auth/signout/${mail}`,
@@ -102,6 +117,7 @@ export const {
   useGetItinerariesByUserIdQuery,
   useGetAllItinerariesByUserIdQuery,
   useGetPostNewItineraryMutation,
+  useLikeDislikeMutation,
   //Activities
   useGetActivitiesByItineraryIdQuery,
   //Comments
@@ -110,4 +126,5 @@ export const {
   usePostUserMutation,
   usePostUserSingInMutation,
   usePostUserSingOutMutation,
+  useSignInTokenMutation
 } = citiesAPI;
