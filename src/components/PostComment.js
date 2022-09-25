@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { useCreateCommentMutation } from "../features/citiesAPI"
+import { useCreateCommentsMutation } from "../features/citiesAPI"
 
 function PostComment(props) {
     const commentField = useRef();
@@ -13,7 +13,7 @@ function PostComment(props) {
     let reload = props.reload 
 
     const [show, setShow] = useState(false)
-    const [createNewComment] = useCreateCommentMutation()
+    const [createNewComment] = useCreateCommentsMutation()
 
     function handleNewComment(e){
         e.preventDefault()

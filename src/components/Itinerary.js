@@ -70,6 +70,9 @@ function Itinerary(props) {
         <div className="commentsContainer">
           <Comments itineraryId={it._id} />
         </div>
+        <div>
+          <PostComment />
+        </div>
       </div>
     );
   };

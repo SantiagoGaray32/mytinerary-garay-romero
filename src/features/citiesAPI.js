@@ -71,6 +71,39 @@ export const citiesAPI = createApi({
     //Comments
     getCommentsByItineraryId: builder.query({
       query: (id) => `comments?itinerary=${id}`,
+      
+    }),
+    createComments :builder.mutation({
+      query: (newComment) => ({
+        url: '/comments',
+        method: 'POST',
+        body: newComment,
+        headers: {
+          Authorization: "Bearer " + JSON.parse(localStorage.getItem("token"))
+        }
+      })
+    }),
+    editComments : builder.mutation({
+      query: ({ id, ...editComment}) => ({
+        url: `/comments/${id}`,
+        method: 'PATCH',
+        body: editComment,
+        headers: {
+          Authorization: "Bearer " + JSON.parse(localStorage.getItem("token"))
+        }
+      })
+    }),
+    deleteComments :builder.mutation({
+      query : (idDeleteComment) => ({
+        url: `/comments/${idDeleteComment}`,
+        method: 'DELETE',
+        headers:{
+          Authorization: "Bearer " + JSON.parse(localStorage.getItem("token"))
+        }
+      })
+    }),
+    getCommentByUser: builder.query({
+      query : (userId) => `/comments/commentbyuser/?user=${userId}`
     }),
     //Users
     postUser: builder.mutation({
@@ -122,6 +155,10 @@ export const {
   useGetActivitiesByItineraryIdQuery,
   //Comments
   useGetCommentsByItineraryIdQuery,
+  useCreateCommentsMutation,
+  useDeleteCommentsMutation,
+  useEditCommentsMutation,
+  useGetCommentByUserQuery,
   //Users
   usePostUserMutation,
   usePostUserSingInMutation,
