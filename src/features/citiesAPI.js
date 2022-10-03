@@ -113,6 +113,16 @@ export const citiesAPI = createApi({
         body: dataNewUser,
       }),
     }),
+    editUser: builder.mutation({
+      query: (data) => ({
+        url: `/auth/update${data}`,
+        method: "PATCH",
+        body: data,
+        headers: {
+          Authorization: "Bearer " + JSON.parse(localStorage.getItem("token"))
+        }
+      })
+    }),
     postUserSingIn: builder.mutation({
       query: (user) => ({
         url: "/auth/signin",
@@ -163,5 +173,6 @@ export const {
   usePostUserMutation,
   usePostUserSingInMutation,
   usePostUserSingOutMutation,
-  useSignInTokenMutation
+  useSignInTokenMutation,
+  useEditUserMutation
 } = citiesAPI;

@@ -47,9 +47,14 @@ function Navbar() {
             <Link to={"/cities"}>Cities</Link>
           </li>
           {user?.id && 
+            <>
             <li>
               <Link to={"/newitinerary"}>My itineraries</Link>
             </li>
+            <li>
+              <Link to={"/editprofile"}>Edit Profile</Link>
+            </li>
+            </>
           }
           {user?.role === "admin" && ( //short circuit => user.logged && mostra esto | ternario => user.logged ? mostra esto : sino esto
             <>

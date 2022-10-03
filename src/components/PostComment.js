@@ -10,7 +10,7 @@ function PostComment(props) {
     let userRole = props.userRole;
     let name = props.Name;
 
-    let reload = props.reload 
+    const [reload,setReload] = useState(true);
 
     const [show, setShow] = useState(false)
     const [createNewComment] = useCreateCommentsMutation()
@@ -33,7 +33,7 @@ function PostComment(props) {
             let singupForm = document.querySelector("#formNewComment");
             singupForm.reset();
         }
-        reload()
+        
     })
     .catch((error) => {
         console.log(error);
@@ -66,7 +66,7 @@ return(
                                     <label htmlFor="commentMessage">
                                         <input id="commentMessage" type="text" placeholder="Post your comment..." ref={commentField}/>
                                     </label>
-                                    <input className="submitComment" type="submit" value="Submit"/>
+                                    <input className="submitComment" type="submit" value="Post Comment"/> 
                                 </form>
                             </div>
                         </div>
