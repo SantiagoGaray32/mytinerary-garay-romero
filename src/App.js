@@ -13,6 +13,7 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import NewItinerary from "./pages/NewItinerary";
 import PrivateRoute from "./components/PrivateRoute";
+import EditProfilePage from "./pages/EditProfilePages";
 
 function App() {
 
@@ -26,6 +27,9 @@ function App() {
               </Route>
               <Route path="/editcity" element={<PrivateRoute role="admin"/>}>
                 <Route path="/editcity" element={<EditCity />} />
+              </Route>
+            <Route path="/editprofile" element={<PrivateRoute/>}>
+                <Route path="/editprofile" element={<EditProfilePage />} />
               </Route>
               <Route path="/mytineraries" element={<PrivateRoute/>}>
                 <Route path="/mytineraries" element={<MyTineraries />} />
